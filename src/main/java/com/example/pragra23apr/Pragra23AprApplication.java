@@ -27,12 +27,12 @@ public class Pragra23AprApplication {
         System.out.println(dao.getStudents());
         System.out.println(dao.getStudents());
         dao.updateStudent(student_2_1);
-//        Course java = Course.builder().id(2).courseName("Java").courseFee(1000).createDate(Instant.now()).build();
-//        Course maths = Course.builder().id(1).courseName("Maths").courseFee(500).createDate(Instant.now()).build();
-//        Course maths1 = Course.builder().courseName("Maths").courseFee(6000).createDate(Instant.now()).updateDate(Instant.now()).id(1).build();
-//        courseDAO.createCourse(java);
-//        courseDAO.createCourse(maths);
-//        courseDAO.updateCourse(maths1);
+        Course java = Course.builder().id(2).courseName("Java").courseFee(1000).createDate(Instant.now()).build();
+        Course maths = Course.builder().id(1).courseName("Maths").courseFee(500).createDate(Instant.now()).build();
+        Course maths1 = Course.builder().courseName("Maths").courseFee(6000).createDate(Instant.now()).updateDate(Instant.now()).id(1).build();
+        courseDAO.createCourse(java);
+        courseDAO.createCourse(maths);
+        courseDAO.updateCourse(maths1);
 
         System.out.println(courseDAO.getCourses());
 
