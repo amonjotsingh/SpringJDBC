@@ -35,11 +35,15 @@ public class StudentDAO {
     public int deleteStudent(Student student) {
         return template.update("DELETE FROM STUDENT WHERE ID=:id", new BeanPropertySqlParameterSource(student.getId()));
     }
-
     public int updateStudent(Student student) {
         return template.update("UPDATE STUDENT SET FIRST_NAME=:firstName, LAST_NAME=:lastName, CREATE_DATE=:createDate, UPDATE_DATE=:updateDate where ID =:id"
                 ,new BeanPropertySqlParameterSource(student));
     }
+//    THIS IS THE FORMAT IN NORMAL JDBC TEMPLATE
+//    public int updateStudent(Student student) {
+//        return template.update("UPDATE STUDENT SET FIRST_NAME=?, LAST_NAME=?, CREATE_DATE=?, UPDATE_DATE=? where ID =?"
+//                ,student.getFirstName(),student.getLastName(),student.getCreateDate(),student.getUpdateDate(),student.getId());
+//    }
 
     public List<Student> getStudents() {
         return template.query("SELECT * FROM STUDENT", new BeanPropertyRowMapper<>(Student.class));
